@@ -888,3 +888,58 @@ Processing by StaticPagesController#help as HTML
 Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.0ms | Allocations: 4343)
 
 
+Started GET "/" for ::1 at 2019-09-12 16:43:49 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+Started GET "/" for ::1 at 2019-09-12 16:43:54 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 6042.7ms | Allocations: 5256835)
+Completed 500 Internal Server Error in 6068ms (ActiveRecord: 0.0ms | Allocations: 5260568)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_rails_default with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/alexandereversbusch1/environment/twitter/app/views"
+  * "/Users/alexandereversbusch1/.rvm/gems/ruby-2.6.3/gems/actiontext-6.0.0/app/views"
+  * "/Users/alexandereversbusch1/.rvm/gems/ruby-2.6.3/gems/actionmailbox-6.0.0/app/views"
+):
+    1: <!DOCTYPE html>
+    2: <html> <head>
+    3:     <title><%= full_title(yield(:title)) %></title> <%= render 'layouts/rails_default' %>
+    4:     <%= render 'layouts/shim' %>
+    5:   </head> <body>
+    6:     <%= render 'layouts/header' %> 
+  
+app/views/layouts/application.html.erb:3
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1880.7ms | Allocations: 2027837)
+Completed 500 Internal Server Error in 1883ms (ActiveRecord: 0.0ms | Allocations: 2029088)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_rails_default with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/alexandereversbusch1/environment/twitter/app/views"
+  * "/Users/alexandereversbusch1/.rvm/gems/ruby-2.6.3/gems/actiontext-6.0.0/app/views"
+  * "/Users/alexandereversbusch1/.rvm/gems/ruby-2.6.3/gems/actionmailbox-6.0.0/app/views"
+):
+    1: <!DOCTYPE html>
+    2: <html> <head>
+    3:     <title><%= full_title(yield(:title)) %></title> <%= render 'layouts/rails_default' %>
+    4:     <%= render 'layouts/shim' %>
+    5:   </head> <body>
+    6:     <%= render 'layouts/header' %> 
+  
+app/views/layouts/application.html.erb:3
+Started GET "/" for ::1 at 2019-09-12 16:45:47 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 804)
+  Rendered layouts/_rails_default.html.erb (Duration: 51.2ms | Allocations: 15006)
+  Rendered layouts/_shim.html.erb (Duration: 0.4ms | Allocations: 87)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 236)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 164)
+Completed 200 OK in 61ms (Views: 59.6ms | ActiveRecord: 0.0ms | Allocations: 18431)
+
+
