@@ -2662,3 +2662,114 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-09-14 15:09:55 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1060.4ms | Allocations: 1360709)
+  Rendered layouts/_rails_default.html.erb (Duration: 14.4ms | Allocations: 13178)
+  Rendered layouts/_shim.html.erb (Duration: 0.4ms | Allocations: 87)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 258)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 183)
+Completed 200 OK in 1088ms (Views: 1082.8ms | ActiveRecord: 0.0ms | Allocations: 1377981)
+
+
+Started GET "/users/1" for ::1 at 2019-09-14 15:10:03 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 188)
+  Rendered layouts/_rails_default.html.erb (Duration: 18.6ms | Allocations: 12858)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 43ms (Views: 25.1ms | ActiveRecord: 1.1ms | Allocations: 20594)
+
+
+Started GET "/users/1" for ::1 at 2019-09-14 15:11:59 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 46)
+  Rendered layouts/_rails_default.html.erb (Duration: 30.2ms | Allocations: 12819)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 112)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 45ms (Views: 33.4ms | ActiveRecord: 0.8ms | Allocations: 19395)
+
+
+Started GET "/users/new" for ::1 at 2019-09-14 15:12:02 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2885)
+  Rendered layouts/_rails_default.html.erb (Duration: 46.0ms | Allocations: 12861)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 85)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 59ms (Views: 57.3ms | ActiveRecord: 0.0ms | Allocations: 16915)
+
+
+Started POST "/users" for ::1 at 2019-09-14 15:12:11 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"2BewOwLKYrBc/HD+ssosqPrtStwLKe2ecnfpvuqbANEc3ItyeinR7BanjfhJhS8lUPxPvAwNKQo7jP+OsG2+QQ==", "user"=>{"name"=>"test", "email"=>"test@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 690)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started POST "/users" for ::1 at 2019-09-14 15:15:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"2BewOwLKYrBc/HD+ssosqPrtStwLKe2ecnfpvuqbANEc3ItyeinR7BanjfhJhS8lUPxPvAwNKQo7jP+OsG2+QQ==", "user"=>{"name"=>"test", "email"=>"test@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "test"], ["email", "test@example.com"], ["created_at", "2019-09-14 19:15:17.729713"], ["updated_at", "2019-09-14 19:15:17.729713"], ["password_digest", "$2a$12$QiAxEtnvpZ9i7.GcEoGdqu6qbkLuU8jdN9TqxqisdcSy4IphUDta2"]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 287ms (ActiveRecord: 9.9ms | Allocations: 10158)
+
+
+Started GET "/users/new" for ::1 at 2019-09-14 15:15:23 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 923)
+  Rendered layouts/_rails_default.html.erb (Duration: 11.7ms | Allocations: 12867)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 85)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 49)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 14963)
+
+
+Started POST "/users" for ::1 at 2019-09-14 15:15:36 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"xP++lqPO1IZnjEHep/IHDpizyUHbFq1Cy3ae67guNzcANIXf2y1n2i3XvNhcvQSDMqLMIdwyadaCjYjb4tiJpw==", "user"=>{"name"=>"test", "email"=>"test@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 861)
+  Rendered layouts/_rails_default.html.erb (Duration: 10.7ms | Allocations: 12776)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 83)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 47)
+Completed 200 OK in 276ms (Views: 13.3ms | ActiveRecord: 0.2ms | Allocations: 17975)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
