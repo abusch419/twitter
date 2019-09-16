@@ -3533,3 +3533,138 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.1ms | Allocations: 15456)
 
 
+Started GET "/" for ::1 at 2019-09-16 15:54:09 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1279.8ms | Allocations: 1378173)
+  Rendered layouts/_rails_default.html.erb (Duration: 18.1ms | Allocations: 13452)
+  Rendered layouts/_shim.html.erb (Duration: 0.3ms | Allocations: 87)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 424)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 183)
+Completed 200 OK in 1311ms (Views: 1306.2ms | ActiveRecord: 0.0ms | Allocations: 1396078)
+
+
+Started GET "/login" for ::1 at 2019-09-16 15:54:12 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2241)
+  Rendered layouts/_rails_default.html.erb (Duration: 133.4ms | Allocations: 13116)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 99)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 158ms (Views: 156.4ms | ActiveRecord: 0.0ms | Allocations: 17108)
+
+
+Started POST "/login" for ::1 at 2019-09-16 15:54:13 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Cd9cOIea6iSxwtcf8ebmHHMAAMPrX6BI/kCDxDSz4GpguXthjsmurUBKQcdgV6NR/hah4jqwya63aWFFliKJbg==", "session"=>{"email"=>"alex@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alex@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 288ms (ActiveRecord: 1.4ms | Allocations: 6583)
+
+
+Started GET "/users/1" for ::1 at 2019-09-16 15:54:14 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 185)
+  Rendered layouts/_rails_default.html.erb (Duration: 31.2ms | Allocations: 13118)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 5)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.0ms | Allocations: 848)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 45ms (Views: 41.1ms | ActiveRecord: 0.3ms | Allocations: 16440)
+
+
+Started DELETE "/logout" for ::1 at 2019-09-16 15:54:16 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TO/y0oba7qmBrKPnks3LjNftEZ1L7PVldS0N5Dn5d8/WTh273cCTncUEtNJUSccRRLQNwWURKv+cjyHYtMwA4A=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/" for ::1 at 2019-09-16 15:54:16 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.3ms | Allocations: 705)
+  Rendered layouts/_rails_default.html.erb (Duration: 42.5ms | Allocations: 12970)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.0ms | Allocations: 14853)
+
+
+Started GET "/login" for ::1 at 2019-09-16 15:54:27 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 448)
+  Rendered layouts/_rails_default.html.erb (Duration: 31.0ms | Allocations: 13113)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 99)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 49)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.0ms | Allocations: 14629)
+
+
+Started POST "/login" for ::1 at 2019-09-16 15:54:28 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"xUP8m5ZpmOYLhboUCawdeNofjqOwHgdg3YLb35dCqllguLbeuI1254Pqsg6Q/8beXAzYEmKbYc6n89ruk0t6QQ==", "session"=>{"email"=>"alex@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alex@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 261ms (ActiveRecord: 0.4ms | Allocations: 926)
+
+
+Started GET "/users/1" for ::1 at 2019-09-16 15:54:28 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 42)
+  Rendered layouts/_rails_default.html.erb (Duration: 14.2ms | Allocations: 13111)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 732)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 47)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.2ms | Allocations: 15472)
+
+
+Started DELETE "/logout" for ::1 at 2019-09-16 15:54:31 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"L3mLJt+AlkioKfF0IJ8cygf3X6E20LITt3zqkGJ8rlWtq5v6xqzG23liS/4PjjZziVQuQDsdLBKGOT65+gjFnQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 341)
+
+
+Started GET "/" for ::1 at 2019-09-16 15:54:31 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 6.2ms | Allocations: 697)
+  Rendered layouts/_rails_default.html.erb (Duration: 14.5ms | Allocations: 12965)
+  Rendered layouts/_shim.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 95)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 47)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 14814)
+
+
+Started GET "/users/1" for ::1 at 2019-09-16 15:55:03 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 42)
+  Rendered layouts/_rails_default.html.erb (Duration: 14.6ms | Allocations: 13111)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 118)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 47)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 0.4ms | Allocations: 14848)
+
+
